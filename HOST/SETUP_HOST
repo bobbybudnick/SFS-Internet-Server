@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "Host"
+
+sudo apt-get install xserver-xorg kde-plasma-desktop qtvirtualkeyboard-plugin ark screen bluez-obexd linux-cpupower falkon firmware-linux-nonfree ntp firmware-realtek qml-module-org-kde-newstuff mpv iftop locate feh xvkbd matchbox-keyboard psmisc xinput bc plasma-widgets-addons linux-headers-4.19.0-19-amd64
+
+sudo apt-get autoremove kscreen pulseaudio
+
+cp xsessionrc ~/.xsessionrc
+
+sudo mkdir /lib/firmware/rtl_bt/
+
+sudo cp rtl8723bs_config-OBDA8723.bin /lib/firmware/rtl_bt/
+
+sudo cp rtl8723bs_fw.bin /lib/firmware/rtl_bt/
+
+echo "Now it is time to install Vmware and the guest Linux OS"
+

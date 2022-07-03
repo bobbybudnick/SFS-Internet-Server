@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Guest - user name should be pi here or you are going to have a bad time"
+
+sudo apt-get install apache2 openssh-server iftop psmisc
+
+sudo chmod u+s /usr/bin/lsof
+
+sudo setcap cap_net_raw,cap_net_admin+eip /usr/sbin/iftop
+
+sudo cp apache2.conf /etc/apache2/
+
+#user name specific
+sudo cp inittab /etc/inittab
+
+cp profile ~/.profile
+
+echo "Now it is time to install scripts in /usr/lib/cgi-bin and web stuff in /var/www/html and change the ssh port number and password"
+
