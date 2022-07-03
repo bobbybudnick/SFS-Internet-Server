@@ -24,6 +24,24 @@ could employ a variety of operating systems between hosts
 could implement virtualization and snapshotting for server instances  
 could leverage nonstandard port numbers
 
+Setup host script
+-----
+install programs  
+removal of annoying programs  
+copy xsessionrc to setup touch and display  
+copy Lattepanda original bluetooth firmware to setup bluetooth keyboard and mouse  
+convenience message
+
+Setup guest script
+-----
+install programs  
+set lsof setuid root  
+setup pcap permissions  
+copy apache2.conf to setup apache web server for scripting  
+copy inittab to automatically login at first virtual console  
+copy profile to launch iftop at login  
+convenience message
+
 Upgrade rationale from ascii to beowulf
 -----
 kernel to fix ethernet - check - r8152 blacklisted so install ok but not installation  
