@@ -13,7 +13,12 @@ sudo cp apache2.conf /etc/apache2/
 #user name specific
 sudo cp inittab /etc/inittab
 
-cp profile ~/.profile
+#user name specific
+#cp profile ~/.profile
+#sudo cp profile ~/.profile
+#put the file in the correct place whether this script is run as root or not
+#previously if the script itself ran as root the file would mistakenly go into /root
+cp profile /home/pi/.profile
 
-echo "Now it is time to install scripts in /usr/lib/cgi-bin and web stuff in /var/www/html and change the ssh port number and password"
+echo "Now it is time to install scripts in /usr/lib/cgi-bin and web stuff in /var/www/html and change the SSH port number and password"
 
