@@ -145,17 +145,6 @@ the scripts here should not be readable to the outside world
 use wget to try to download scripts  
 a download completes but it is only the output of the script not the contents
 
-Expanding the small 32 GB EMMC on Lattepanda original
------
-micro SD card is setup with fdisk  
-micro SD card is setup with mkfs  
-micro SD card is automounted with fstab on host  
-777 permissions on mounted area  
-disk added to virtual machine with virtual disk file residing on sdcard mounted area  
-disk is setup with fdisk on guest  
-disk is setup with mkfs on guest  
-disk is automounted with fstab on guest
-
 Python memory failures on web server
 -----
 a memoryerror exception is being thrown by Python  
@@ -183,4 +172,38 @@ Host user inteface
 KDE with network monitor widget on panel  
 Vmware  
 Ksysguard with smallest height at bottom
+
+Basic server preparation
+-----
+make MISC directory  
+make SFS_MID_CODE directory  
+make SFS_MID_WIKI directory  
+fdisk new drive  
+mkfs.ext4 new drive  
+setup fstab for new drive  
+copy wiki  
+copy repo files  
+copy guest files  
+run guest script  
+run web script  
+change cgi security statement
+
+Vmware meltdown
+-----
+the small 32 GB EMMC was filling up instead of the micro SD card as expected  
+this led to both virtual machines having to be entirely deleted  
+the extra virtual disk being remote from the Vmware folder is causing some problems  
+it is important that a template be made with no extra virtual disks  
+clone from this template before the extra virtual disk is added  
+originally the template was used for troubleshooting but now it is just a backup  
+Vmware is fundmentally incompatible with the 2 disparate virtual disks approach  
+both virtual disks must be in the same folder and on the same drive  
+can back up full virtual machine with both disks because it does not expand initially  
+one way is to put both disks on host mounted SD but this would wear the SD fast  
+another way is to start Vmware as root and add the extra disk as a block device  
+the other way does in fact conserve space on the EMMC as it is supposed to  
+the other way has fairly poor latency to the block device but bandwidth is good enough  
+the other way needs physical disk set to independent in advanced for snapshots to work  
+the independent mode causes snapshots to not affect the physical disk  
+the independent mode even has an option to make the disk nonpersistent
 
