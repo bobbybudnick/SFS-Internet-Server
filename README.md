@@ -209,7 +209,7 @@ the independent mode even has an option to make the disk nonpersistent
 
 Later remarks
 -----
-this is the classic or previous stage configuration no longer in use by SFS
-it can be thought of as a self contained internet server infrastructure in a box
+this is the classic or previous stage configuration no longer in use by SFS  
+it can be thought of as a self contained internet server infrastructure in a box  
 the one PC nature makes it quick to deploy and relevant for small networks
 
